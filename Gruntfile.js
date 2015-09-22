@@ -12,22 +12,22 @@ module.exports = function(grunt){
           consolidateMediaQueries:    true
         },
         files: {
-          'assets/style.css': 'assets/style.css'
+          'css/style.css': 'css/style.css'
         }
       }
     },
 
     cssmin: {
       build: {
-        src: 'assets/style.css',
-        dest: 'assets/style.css'
+        src: 'css/style.css',
+        dest: 'css/style.css'
       }
     },
 
     sass: {
       build: {
         files: {
-          'assets/style.css': 'sass/style.scss'
+          'css/style.css': 'sass/style.scss'
         }
       }
     },
@@ -38,7 +38,7 @@ module.exports = function(grunt){
       },
       build: {
         files: {
-          'assets/style.css': 'assets/style.css'
+          'css/style.css': 'css/style.css'
         }
       }
     },

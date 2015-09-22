@@ -1,0 +1,25 @@
+$colors: (1: #f2f2f2, 2: #4BBFC3, 3: #7BAABE, 4: whitesmoke);
+
+@each $i, $color in $colors {
+  #section#{$i} {
+  background-color: $color;
+}
+}
+#menu {
+  position: fixed;
+  z-index: 10;
+  li {
+    display: inline-block;
+    color: #000;
+    background: rgba(255,255,255,0.5);
+    margin-left: 10px;
+    a {
+      text-decoration: none;
+      color: #000;
+    }
+    &:first-child {
+      margin-left: 0px;
+    }
+  }
+  
+}
