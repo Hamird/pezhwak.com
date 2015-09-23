@@ -1,10 +1,38 @@
+@import "mixins";
+
 $colors: (1: #f2f2f2, 2: #4BBFC3, 3: #7BAABE, 4: whitesmoke);
 
+/* Sections */
 @each $i, $color in $colors {
   #section#{$i} {
-  background-color: $color;
+    background-color: $color;
+  }
 }
+
+%content-size {
+  width: 90vw;
+  padding-left: 10px;
 }
+
+/* Flex inside sections */
+.content {
+  @include flexing(inline-flex, $justify: space-around);
+  @extend %content-size;
+}
+.flex {
+  @include flexitem(100px, 1);
+  border: 1px solid black;
+  border-radius: 4px;
+  text-align: center;
+  margin: 1px;
+}
+
+h2 {
+  text-align: center;
+  @extend %content-size;
+}
+
+/* Nav menu */
 #menu {
   position: fixed;
   z-index: 10;
