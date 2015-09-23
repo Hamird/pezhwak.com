@@ -1,0 +1,13 @@
+@mixin flexing($flex, $row: row, $wrap: wrap, $justify:none, $align: none) {
+  display: $flex;
+  flex-flow: $row $wrap;
+  @if $justify != none {
+    justify-content: $justify;
+  }
+  @if $align != none {
+    align-content: $align;
+  }
+}
+@mixin flexitem($basis: auto, $grow: 0, $shrink: 0) {
+  flex: $grow $shrink $basis;
+}
