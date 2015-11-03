@@ -11,12 +11,16 @@ $colors: (1: #f2f2f2, 2: #4BBFC3, 3: #7BAABE, 4: whitesmoke);
 
 %content-size {
   width: 90vw;
-  padding-left: 10px;
+  margin: 10px auto;
+}
+
+body {
+  direction: rtl;
 }
 
 /* Flex inside sections */
 .content {
-  @include flexing(inline-flex, $justify: space-around);
+  @include flexing(flex, $justify: space-around);
   @extend %content-size;
 }
 .flex {
@@ -35,7 +39,7 @@ h2 {
 /* Nav menu */
 #menu {
   position: fixed;
-  z-index: 10;
+  z-index: 4;
   li {
     display: inline-block;
     color: #000;

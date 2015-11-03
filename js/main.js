@@ -3,10 +3,11 @@ $(document).ready(function() {
     // sectionsColor: ['#f2f2f2', '#4BBFC3', '#7BAABE', 'whitesmoke'],
     menu: '#menu',
     anchors: ['page1', 'page2', 'page3', 'page4'],
-    navigation: {
-      'position': 'right',
-      'tooltips': ['First section', 'Second section', 'Third section', 'Fourth section']
-    },
+    navigation: false,
+    // {
+    //   'position': 'right',
+    //   'tooltips': ['First section', 'Second section', 'Third section', 'Fourth section']
+    // },
 	afterRender: function(){
 	  $('#pp-nav').addClass('custom');
 	},
