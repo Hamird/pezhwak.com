@@ -18,6 +18,11 @@ $(document).ready(function() {
 		$('#pp-nav').addClass('custom');
 	  }
 	}
-
+  });
+  $('.service').click(function() {
+    $('#section2 .details').addClass('opened');
+  });
+  $('.close').click(function() {
+    $('.details').removeClass('opened');
   });
 });
