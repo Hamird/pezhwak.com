@@ -1,18 +1,21 @@
 {
-    "name" : "SassGrunt",
-    "version" : "0.1.0",
-    "author" : "Sina",
-    "private" : true,
-
-    "devDependencies" : {
-        "grunt" :                       "~0.4.0",
-        "grunt-contrib-cssmin":         "*",
-        "grunt-contrib-sass":           "*",
-        "grunt-contrib-uglify":         "*",
-        "grunt-contrib-watch":          "*",
-        "grunt-cssc":                   "*",
-        "grunt-htmlhint":               "*",
-        "grunt-autoprefixer":           "*",
-        "matchdep":                     "*"
-    }
+  "name": "SassGrunt",
+  "version": "0.1.0",
+  "author": "Sina",
+  "private": true,
+  "devDependencies": {
+    "grunt": "~0.4.0",
+    "grunt-autoprefixer": "*",
+    "grunt-contrib-cssmin": "*",
+    "grunt-contrib-sass": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-cssc": "*",
+    "grunt-htmlhint": "*",
+    "matchdep": "*",
+    "normalize.css": "^3.0.3"
+  },
+  "dependencies": {
+    "mustache": "^2.2.1"
+  }
 }

@@ -1,51 +1,48 @@
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
         <link href="css/style.css" rel="stylesheet"/>
+        <link href="css/normalize.css" rel="stylesheet"/>
         <link href="css/jquery.pagepiling.css" type="text/css" rel="stylesheet"/>
         <title>پژواک</title>
     </head>
     <body>
+        <div class="logo">
+            <img class="logo-img" alt="پژواک" src="img/logo.png">
+        </div>
+        <header>
+        
         <ul id="menu">
-            <li data-menuanchor="page1" class="active"><a href="#page1">First section</a></li>
-            <li data-menuanchor="page2"><a href="#page2">Second section</a></li>
-            <li data-menuanchor="page3"><a href="#page3">Third section</a></li>
-            <li data-menuanchor="page4"><a href="#page4">Fourth section</a></li>
+            <li data-menuanchor="page1" class="active"><a href="#page1">درباره پژواک</a></li>
+            <li data-menuanchor="page2"><a href="#page2">خدمات پژواک</a></li>
+            <li data-menuanchor="page3"><a href="#page3">مشتریان پژواک</a></li>
+            <li data-menuanchor="page4"><a href="#page4">تماس با ما</a></li>
         </ul>
+        </header>
+
         <div id="pagepiling">
             <div class="section" id="section1">
-                <div class="content">
-                    <div class="flex">معرفی می‌کنیم. خدمات نشر پژواک</div>
-                    <div class="flex">
-                        #TODO add overview of services here.
+                <div class="intro-content">
+                    <div class="intro flex">
+                        در این مسیر، تمرکز فعالیت‌های شرکت پژواک بر تحقیقات بازار، ارتباطات، امور رسانه‌ای و مدیریت محتوا است. تیم پژواک با درک و شناخت عمیق در حوزه تحقیقات، ارتباطات، رسانه و محتوا توانسته است گروهی پویا، چالاک و منعطف ایجاد کند تا علاوه بر خدمات اجرایی دقیق، کارآمد و مؤثر، بیشترین رضایت را برای مشتریان ایجاد کند.
                     </div>
                 </div>
             </div>
             <div class="section" id="section2">
-                <div class="details">
+                <div id="serviced1" class="details">
                     <a href="#" class="close">x</a>
-                    This is details
+                    This is details 1
+                </div>
+                <div id="serviced2" class="details">
+                    <a href="#" class="close">x</a>
+                    This is details 2
                 </div>
                 <h2>خدمات</h2>
-                <div class="content">
-                    <div class="flex">
-                        <a class="service" href="#">
-                        <img alt="" src="img/ph.png"/>
-                        <p>سرویس اول</p>
-                        </a>
-                    </div>
-                    <div class="flex">
-                        <a class="service" href="#">
-                        <img alt="" src="img/ph.png"/>
-                        <p>سرویس دوم</p>
-                        </a>
-                    </div>
-                    <div class="flex">
-                        <a class="service" href="#">
-                        <img alt="" src="img/ph.png"/>
-                        <p>سرویس سوم</p>
-                        </a>
-                    </div>
+                <div onLoad="loadServices">
+                    <div id  ="service-overview" class="content"></div>
+                        <script id="services" type="text/html">{{#services}}<div class="flex"><a id="{{id}}" class="service" href="#"><img alt="" src="img/ph.png"/><p>{{name}}</p></a></div>{{/services}}</script>
+                
                 </div>
             </div>
             <div class="section" id="section3">
@@ -53,26 +50,26 @@
                 <div class="content">
                     <div class="flex">
                         <a href="#">
-                        <img alt="" src="img/person1.png"/>
-                        <p>نفر اول</p>
+                            <img alt="" src="img/person1.png"/>
+                            <p>نفر اول</p>
                         </a>
                     </div>
                     <div class="flex">
                         <a href="#">
-                        <img alt="" src="img/person2.png"/>
-                        <p>نفر دوم</p>
+                            <img alt="" src="img/person2.png"/>
+                            <p>نفر دوم</p>
                         </a>
                     </div>
                     <div class="flex">
                         <a href="#">
-                        <img alt="" src="img/person3.png"/>
-                        <p>نفر سوم</p>
+                            <img alt="" src="img/person3.png"/>
+                            <p>نفر سوم</p>
                         </a>
                     </div>
                     <div class="flex">
                         <a href="#">
-                        <img alt="" src="img/person3.png"/>
-                        <p>نفر سوم</p>
+                            <img alt="" src="img/person3.png"/>
+                            <p>نفر سوم</p>
                         </a>
                     </div>
                 </div>
@@ -87,8 +84,9 @@
                 </div>
             </div>
         </div>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript"></script>
+        <script src="js/jquery.js" type="text/javascript"></script>
         <script src="js/jquery.pagepiling.min.js" type="text/javascript"></script>
+        <script src="js/mustache.min.js" type="text/javascript"></script>
         <script src="js/main.js" type="text/javascript"></script>
     </body>
 </html>

@@ -71,7 +71,7 @@ module.exports = function(grunt){
   });
 
 
-  grunt.registerTask('default', []);
+  grunt.registerTask('default', ['watch']);
   grunt.registerTask('buildcss',  ['sass', 'cssc', 'autoprefixer']);
 
 };

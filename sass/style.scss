@@ -1,6 +1,9 @@
 @import "mixins";
+@import "fonts";
 
-$colors: (1: #f2f2f2, 2: #4BBFC3, 3: #7BAABE, 4: whitesmoke);
+/* Variables */
+$colors: (1: #666, 2: white, 3: white, 4: white);
+$header-text-color: rgba(255,255,255,0.87);
 
 /* Sections */
 @each $i, $color in $colors {
@@ -16,23 +19,44 @@ $colors: (1: #f2f2f2, 2: #4BBFC3, 3: #7BAABE, 4: whitesmoke);
 
 body {
   direction: rtl;
+  font-family: 'Roya', serif;
 }
 
-::before, ::after {
-            box-sizing: border-box;
-          }
+header {
+  position: fixed;
+  z-index: 4;
+  width: 100%;
+  height: 60px;
+  background-color: #666;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 /* Flex inside sections */
 .content {
   @include flexing(flex, $justify: space-around);
   @extend %content-size;
-
 }
+
+.intro-content {
+  @extend %content-size;
+  @include flexing(flex, $row: column, $justify: space-around);
+}
+
 .flex {
-  @include flexitem(100px, 1);
+  @include flexitem(auto, 1);
   border: 1px solid black;
   border-radius: 4px;
-  text-align: center;
   margin: 1px;
+}
+
+.intro {
+  text-align: left; 
+  font-size: 1.9em;
+  font-weight: 700;
+  margin-right: 500px;
 }
 
 h2 {
@@ -40,20 +64,48 @@ h2 {
   @extend %content-size;
 }
 
+a {
+  outline: none;
+}
+
+.logo {
+  padding: 5px 15px;
+  z-index: 5;
+  position: fixed;
+  right: 10;
+}
+.logo-img {
+  width: auto;
+  transition: width 1s ease-in 0.1s;
+  &.fixed {
+    width: 250px;
+  }
+}
+
 /* Nav menu */
 #menu {
-  position: fixed;
-  z-index: 4;
+  float: left;
+  width: auto;
+  padding-left: 20px;
+  margin: 0;
+  height: 100%;
   li {
     display: inline-block;
-    color: #000;
-    background: rgba(255,255,255,0.5);
-    margin-left: 10px;
-    a {
-      text-decoration: none;
-      color: #000;
+    padding: 10px 10px 0;
+    width: 130px;
+    text-align: center;
+    height: 100%;
+    box-sizing: border-box;
+    transition: border-bottom 0.1s ease-in;
+    &.active {
+      border-bottom: 4px solid $header-text-color;
     }
-    &:first-child {
+    a {
+      font-size: 1.4em;
+      text-decoration: none;
+      color: $header-text-color;
+    }
+    &:last-child {
       margin-left: 0px;
     }
   }
